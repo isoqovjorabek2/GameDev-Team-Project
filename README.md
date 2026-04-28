@@ -1,3 +1,4 @@
+# GameDev-Team-Project
 # 🎮 Unity Game Backend
 
 This is a backend server for a Unity game built with:
@@ -49,5 +50,6 @@ JWT_SECRET=your_secret_key
 * GET `/api/game/leaderboard`
 
 ## 🧠 Author
-
 Jasurbek
+
+
