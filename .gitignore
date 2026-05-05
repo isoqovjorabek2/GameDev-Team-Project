@@ -1,2 +1,20 @@
-node_modules
+node_modules/
+**/node_modules/
 .env
+
+# Unity / game projects (avoid large generated folders)
+**/Library/
+**/Temp/
+**/obj/
+**/Obj/
+**/Logs/
+**/Build/
+**/Builds/
+**/MemoryCaptures/
+**/UserSettings/
+**/.vs/
+*.csproj.user
+*.sln.user
+*.apk
+*.aab
+*.unitypackage

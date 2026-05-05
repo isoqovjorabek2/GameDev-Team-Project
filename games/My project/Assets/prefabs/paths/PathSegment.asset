@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f384d01e4460dfc4b8c4b965348f2e5f, type: 3}
+  m_Name: PathSegment
+  m_EditorClassIdentifier: Assembly-CSharp::PathSegmentSO
+  prefab: {fileID: 4604865062025527778, guid: 6420f4e1cc128e641a9e7e17d88af3c3, type: 3}
+  length: 15
+  weight: 1

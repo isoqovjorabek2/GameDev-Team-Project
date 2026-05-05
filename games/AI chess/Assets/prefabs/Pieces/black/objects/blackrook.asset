@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7d55a9431dda04a9a6ca048dc59ad1, type: 3}
+  m_Name: blackrook
+  m_EditorClassIdentifier: Assembly-CSharp::PieceData
+  pieceType: 3
+  pieceColor: 1
+  piecePrefab: {fileID: 8619172929093148766, guid: 93ff8d51025753d4eaa1a9cf1d1fb79d, type: 3}
