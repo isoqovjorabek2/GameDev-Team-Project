@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
@@ -5,7 +7,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
-require('dotenv').config();
 
 // Import routes
 const authRoutes = require('./routes/auth');
@@ -24,9 +25,14 @@ const io = new Server(server, {
   }
 });
 
+
+
 // Security middleware
+
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173' // ONLY your frontend can talk to the backend
+}));
 
 // Rate limiting
 const limiter = rateLimit({

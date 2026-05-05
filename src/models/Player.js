@@ -58,19 +58,18 @@ const playerSchema = new mongoose.Schema({
   },
   lastLogin: { type: Date, default: Date.now },
   createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now }
+  updatedAt: { type: Date, default: Date.now }  
 });
 
 // Hash password before saving
-playerSchema.pre('save', async function(next) {
-  if (!this.isModified('password')) return next();
+playerSchema.pre('save', async function() {
+  if (!this.isModified('password')) return;
 
   try {
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
-    next();
   } catch (error) {
-    next(error);
+    throw error; // throw instead of next(error)
   }
 });
 
@@ -80,9 +79,8 @@ playerSchema.methods.comparePassword = async function(candidatePassword) {
 };
 
 // Update timestamp on save
-playerSchema.pre('save', function(next) {
+playerSchema.pre('save', async function() {
   this.updatedAt = Date.now();
-  next();
 });
 
 module.exports = mongoose.model('Player', playerSchema);

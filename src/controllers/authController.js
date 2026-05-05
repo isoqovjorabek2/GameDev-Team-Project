@@ -80,12 +80,16 @@ const login = async (req, res) => {
     }
 
     // Check password (if not using device ID)
-    if (password && !deviceId) {
-      const isMatch = await player.comparePassword(password);
-      if (!isMatch) {
-        return res.status(401).json({ error: 'Invalid credentials' });
-      }
-    }
+    if (!deviceId) {
+  if (!password) {
+    return res.status(400).json({ error: 'Password required' });
+  }
+
+  const isMatch = await player.comparePassword(password);
+  if (!isMatch) {
+    return res.status(401).json({ error: 'Invalid credentials' });
+  }
+}
 
     // Update last login
     player.lastLogin = Date.now();
